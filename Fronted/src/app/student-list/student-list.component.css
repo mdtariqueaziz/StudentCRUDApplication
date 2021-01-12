@@ -1,0 +1,9 @@
+.nav{
+    width: auto;
+    height: 20px;
+    position: fixed;
+    background-color: brown;
+}
+.hide{
+    display: none;
+}

@@ -1,0 +1,85 @@
+<div class="container">
+    <body data-spy="scroll">
+        <div style="background-color: palevioletred;">
+          <button class="btn btn-primary" routerLink="add-student" style="margin: 25px;">Add Student</button>
+          <div class="alert alert-success alert-dismissible" style="width: 50%; float: right; margin-right: 23%;margin-top: 20px;" *ngIf="deleted" >
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>Student deleted successfully</strong> 
+          </div>
+          
+          <div class="alert alert-success alert-dismissible" style="width: 50%; float: right; margin-right: 23%;margin-top: 20px;" id="setTime" *ngIf="updated" >
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong>Student updated successfully</strong> 
+          </div>
+
+          
+        </div>
+        <table class="table table-dark">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Firstname</th>
+              <th>Lastname</th>
+              <th>Email</th>
+              <th>Update</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tr *ngFor="let student of students" >
+            <td>{{student.id}}</td>
+            <td>{{student.firstName}}</td>
+            <td>{{student.lastName}}</td>
+            <td>{{student.email}}</td>
+            <td><a class="btn btn-info" (click)="open(content)">Update</a></td>
+            <ng-template #content let-c="close" let-d="dismiss">
+              <div class="modal-header">
+                <h4 class="modal-title" id="modal-basic-title">Update Student</h4>
+                <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="container">
+                          <div class="form-group">
+                              <input type="text" class="form-control" id="firstName" placeholder="Enter firstname"
+                                     required
+                                     [(ngModel)]="student.firstName" name="firstName"
+                                     #firstName="ngModel">
+                              <div [hidden]="firstName.valid || firstName.pristine"
+                                   class="alert alert-danger">
+                              Firstname is required
+                              </div>
+                            </div>
+                            
+                            <div class="form-group">
+                              <input type="text" class="form-control" id="lastName" placeholder="Enter lastname"
+                                     required
+                                     [(ngModel)]="student.lastName" name="lastName"
+                                     #lastName="ngModel">
+                              <div [hidden]="lastName.valid || lastName.pristine"
+                                   class="alert alert-danger">
+                              Lastname is required
+                              </div>
+                            </div>
+              
+                            <div class="form-group">
+                              <input type="text" class="form-control" id="email" placeholder="Enter email"
+                                     required
+                                     [(ngModel)]="student.email" name="email"
+                                     #email="ngModel">
+                              <div [hidden]="email.valid || email.pristine"
+                                   class="alert alert-danger">
+                              Email is required
+                              </div>
+                            </div>
+                            <div class="modal-footer">
+                              <td> <a class="btn btn-success" (click)="c('click save')"  (click)="updateStudent(student)"  style="margin-bottom: 20px;">Update</a></td>
+                         </div>
+                     </div>
+              </div>
+            </ng-template>
+            <td><a class="btn btn-danger" (click)="delete(student.id)" >Delete</a></td>
+          </tr>  
+        </table>
+      </body>
+</div>
