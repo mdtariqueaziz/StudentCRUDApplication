@@ -8,9 +8,9 @@ StudentCRUD
 <h3>#Adding Student</h3>
 <img src="ScreenShort/AddStudent2.JPG"><hr>
 <h3>#Update Student</h3>
-<img src="ScreenShort/Update.JPG"><hr>
+<img src="ScreenShort/Update1.JPG"><hr>
 <h3>#Update Student</h3>
-<img src="ScreenShort/Update.JPG"><hr>
+<img src="ScreenShort/Update2.JPG"><hr>
 <h3>#Delete Student Student</h3>
-<img src="ScreenShort/DeleteStudent.JPG">
+<img src="ScreenShort/StudentDelete.JPG">
 
