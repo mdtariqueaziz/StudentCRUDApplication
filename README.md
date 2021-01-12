@@ -7,4 +7,10 @@ StudentCRUD
 <img src="ScreenShort/AddStudent.JPG"><hr>
 <h3>#Adding Student</h3>
 <img src="ScreenShort/AddStudent2.JPG"><hr>
+<h3>#Update Student</h3>
+<img src="ScreenShort/Update.JPG"><hr>
+<h3>#Update Student</h3>
+<img src="ScreenShort/Update.JPG"><hr>
+<h3>#Delete Student Student</h3>
+<img src="ScreenShort/DeleteStudent.JPG">
 
